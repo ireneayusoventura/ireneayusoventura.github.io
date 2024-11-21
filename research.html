@@ -9,6 +9,7 @@
 <body>
     <header>
         <div class="logo">IAV</div>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
         <nav>
             <a href="index.html">Home</a>
             <a href="research.html">Research</a>
@@ -60,5 +61,16 @@
         </section>
         
     </main>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            const nav = document.querySelector('header nav');
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none'; // Hide navigation
+            } else {
+                nav.style.display = 'flex'; // Show navigation
+                nav.style.flexDirection = 'column'; // Stack links vertically
+            }
+        });
+    </script>
 </body>
 </html>
