@@ -8,7 +8,8 @@
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo">IAV</a>
+        <div class="logo">IAV</div>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
         <nav>
             <a href="index.html">Home</a>
             <a href="research.html">Research</a>
@@ -21,7 +22,7 @@
         <section class="research-talks">
             <div class="grid">
                 <div class="month">2021-2024:</div>
-                <div class="talk"> Elected representative of the PhD students at the <a href="https://www.paris-est-sup.fr/ecoles-doctorales/ecole-doctorale-mathematiques-et-stic-mstic/l-ed-mstic/">MSTIC doctoral school</a> board. I actively participated in quarterly board meetings and co-organized the "MSTIC PhD Day" events in June 2022 and May 2023.
+                <div class="talk"> I was an elected representative of the PhD students at the <a href="https://www.paris-est-sup.fr/ecoles-doctorales/ecole-doctorale-mathematiques-et-stic-mstic/l-ed-mstic/">MSTIC doctoral school</a> board. I actively participated in quarterly board meetings and co-organized the "MSTIC PhD Day" events in June 2022 and May 2023.
                 </div>
         
                 <div class="month">2022-2023:</div>
@@ -29,7 +30,7 @@
                 </div>
         
                 <div class="month">May 2023:</div>
-                <div class="talk"> I co-organized a three days long seminar "LAMA PhD seminar" for the doctoral students of <a href="https://lama-umr8050.fr">LAMA</a> at Champs-sur-Marne and Créteil.
+                <div class="talk"> I co-organized a three days long seminar "LAMA PhD seminar" for the doctoral students of <a href="https://lama-umr8050.fr">LAMA</a> at both sites; Champs-sur-Marne and Créteil.
                 </div>
             </div>
         </section>
@@ -38,11 +39,11 @@
             (2022-2024) and the <a href="https://lama-umr8050.fr/evenements/seminaire_des_doctorants">"Séminaire des non-permanents de Créteil"</a> (2022-2023). 
             I also designed the poster for the workshops <a href="https://josuecorujo.github.io/organized_events/2023discretecreteil/">"Discrete randomness in Créteil"</a> (2023) and
              <a href="https://contact-creteil.sciencesconf.org/?lang=en">"Contact process in Créteil"</a> (2024).<br>
-            Here are some examples selected uniformly at random:</p>
+            Some exemples selected uniformly at random:</p>
             <div class="posters">
                 <div class="image clickable">
-                    <a href="JournéeBienvenueSEMDOC.jpg" target="_blank">
-                        <img src="JournéeBienvenueSEMDOC.jpg" alt="JournéeBienvenueSEMDOC">
+                    <a href="JournéeBienvenueSEMDOC.jpg" target="_blank">
+                        <img src="JournéeBienvenueSEMDOC.jpg" alt="JournéeBienvenueSEMDOC">
                     </a>
                 </div>
                 <div class="image clickable">
@@ -56,8 +57,8 @@
                     </a>
                 </div>
                 <div class="image clickable">
-                    <a href="SéminaireJosueCorujo.1.jpeg" target="_blank">
-                        <img src="SéminaireJosueCorujo.1.jpeg" alt="SéminaireJosueCorujo">
+                    <a href="SéminaireJosueCorujo.1.jpeg" target="_blank">
+                        <img src="SéminaireJosueCorujo.1.jpeg" alt="SéminaireJosueCorujo">
                     </a>
                 </div>
                 <div class="image clickable">
@@ -67,5 +68,16 @@
                 </div>
             </div>
     </main>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            const nav = document.querySelector('header nav');
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none'; // Hide navigation
+            } else {
+                nav.style.display = 'flex'; // Show navigation
+                nav.style.flexDirection = 'column'; // Stack links vertically
+            }
+        });
+    </script>
 </body>
 </html>
