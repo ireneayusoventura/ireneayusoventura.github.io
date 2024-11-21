@@ -13,7 +13,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: justify;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    margin: 0;
 }
 
 /* Logo styling */
@@ -21,6 +25,11 @@ header .logo {
     font-weight: bold;
     font-size: 1.5rem;
     margin-right: auto;
+}
+
+header, .content {
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 a {
@@ -58,9 +67,20 @@ nav a:hover, .logo:hover {
     color: #d3d3ff; /* Optional: Hover color */
 }
 
+/* Hamburger button styling */
+.menu-toggle {
+    display: none; /* Hide hamburger button by default */
+    background: none; /* No background styling */
+    border: none; /* Remove button border */
+    font-size: 1.5rem; /* Larger size for visibility */
+    color: white; /* Match header text color */
+    cursor: pointer;
+}
+
 /* Main content styling */
 main {
     padding: 2rem;
+    margin-top: 4rem; /* Adjust to prevent overlap with the fixed header */
 }
 
 h1 {
@@ -146,7 +166,7 @@ h2 {
 }
 
 .research-talks {
-    font-family: 'American Typewriter', 'Charter', monospace;
+    font-family: 'American Typewriter', 'Courier', monospace;
     margin-bottom: 2rem;
 }
 
@@ -203,6 +223,73 @@ h2 {
     transform: scale(1.05); /* Add a slight zoom effect on hover */
     transition: transform 0.2s ease; /* Smooth animation */
 }
+
+@media screen and (max-width: 768px) {
+    nav {
+        display: none; /* Hide the navigation links */
+    }
+    header {
+        flex-direction: column; /* Stack the logo and menu */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+    }
+
+    nav a {
+        display: block;
+        margin: 0.5rem 0; /* Stack links vertically */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header nav {
+        display: none; /* Hide nav links by default */
+        flex-direction: column; /* Stack links vertically */
+        background-color: #8087d3; /* Match header background */
+        position: absolute; /* Overlay menu */
+        top: 4rem; /* Position below header */
+        right: 0;
+        left: 0;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    header nav a {
+        padding: 0.5rem 0; /* Add spacing for links */
+        text-align: center; /* Center align text */
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger menu */
+    }
+}
+
+/* Optional transition effect for menu */
+header nav {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Stack the elements */
+        align-items: center; /* Center them */
+    }
+    .text-and-contact, .contact, .image {
+        width: 100%; /* Occupy full width */
+    }
+    .text-and-contact {
+        margin-right: 0; /* Remove extra margin */
+    }
+    .image img {
+        max-width: 90%; /* Scale image */
+    }
+}
+
 
 
 
