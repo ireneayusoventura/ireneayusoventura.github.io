@@ -78,8 +78,8 @@ h2 {
     justify-content: space-between; /* Text on the left, image on the right */
     align-items: center; /* Vertically center text and image */
     padding: 2rem;
-    margin-left: 56px;
-    margin-right: 36px;
+    margin-left: 2rem;
+    margin-right: 3rem;
 }
 
 /* Grouping text and contact on the left */
@@ -92,22 +92,22 @@ h2 {
 
 /* Image styling */
 .content .image img {
-    max-width: 366px; /* Adjust image width */
+    max-width: 22rem; /* Adjust image width */
     height: auto; /* Maintain aspect ratio */
     border-radius: 8px; /* Optional: Rounded corners */
-    margin-top: 70px;
+    margin-top: 6rem;
 }
 
 .goodmargins {
-    margin-left: 56px; /* Adjust the value as needed */
-    margin-right: 40px;
+    margin-left: 6rem; /* Adjust the value as needed */
+    margin-right: 3rem;
 }
 
 /* Contact information styling */
 .contact {
-    width: 500px; /* Set a fixed width to make it smaller */
+    width: 30rem; /* Set a fixed width to make it smaller */
     margin: 2rem auto 1rem 50%; /* Move it to the right */
-    transform: translateX(-66%); /* Center alignment with offset from the left */
+    transform: translateX(-72%); /* Center alignment with offset from the left */
     padding: 0.5rem 1rem; /* Smaller padding inside the box */
     background-color: #e6e6fa; /* Soft lavender background */
     border-radius: 8px; /* Rounded corners */
@@ -126,12 +126,12 @@ h2 {
 .list-pub {
     list-style: none; /* Remove default bullets */
     padding-left: 0px; /* Remove default list padding */
-    margin-left: 60px;
+    margin-left: 4rem;
 }
 
 .list-pub li {
     position: relative; /* Allows the triangle to be positioned */
-    padding-left: 20px; /* Add space to make room for the triangle */
+    padding-left: 2rem; /* Add space to make room for the triangle */
     text-indent: 0; /* Prevent text from being pushed too far */
 }
 
@@ -153,8 +153,8 @@ h2 {
 /* Grid layout */
 .grid {
     display: grid;
-    grid-template-columns: 150px 1fr; /* Narrow column for months, wider for talks */
-    gap: 10px 20px; /* Row gap: 10px, Column gap: 20px */
+    grid-template-columns: 10rem 1fr; /* Narrow column for months, wider for talks */
+    gap: 0.8rem 2rem; /* Row gap: 10px, Column gap: 20px */
     align-items: start; /* Align content at the top of the grid cells */
 }
 
@@ -163,7 +163,7 @@ h2 {
     font-weight: 600;
     text-align: right; /* Align text to the right for months */
     color: #000000;
-    padding-right: 10px; /* Add spacing between the month and talk */
+    padding-right: 0rem; /* Add spacing between the month and talk */
 }
 
 /* Talk column */
@@ -174,7 +174,7 @@ h2 {
 
 .posters {
     display: flex; /* Arrange images side-by-side */
-    gap: 10px; /* Space between images */
+    gap: 1rem; /* Space between images */
     justify-content: center; /* Center the row horizontally */
     align-items: center; /* Vertically align images */
 }
@@ -194,7 +194,7 @@ h2 {
 
 .clickable img {
     cursor: pointer; /* Show a pointer when hovering */
-    max-width: 222px; /* Adjust image size */
+    max-width: 14rem; /* Adjust image size */
     height: auto; /* Maintain aspect ratio */
 }
 
@@ -202,6 +202,12 @@ h2 {
     transform: scale(1.05); /* Add a slight zoom effect on hover */
     transition: transform 0.2s ease; /* Smooth animation */
 }
+
+
+
+
+
+
 
 
 
