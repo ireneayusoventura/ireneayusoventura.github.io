@@ -1,7 +1,12 @@
 body {
     font-family: 'American Typewriter', 'Charter', monospace;
-    margin: 0px;
+    margin: 0 auto;
     padding: 0;
+    line-height: 1.6;
+    max-width: 1024px ;
+    overflow-x: auto;
+    width: 100%;
+    font-size: 16px;
     line-height: 1.6;
 }
 
@@ -9,7 +14,7 @@ body {
 header {
     background-color: #8087d3;
     color: white;
-    padding: 1rem 2rem;
+    padding: 1rem 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,7 +22,8 @@ header {
     position: fixed;
     z-index: 1000;
     top: 0;
-    margin: 0;
+    left: 0;
+    margin: 0 auto;
 }
 
 /* Logo styling */
@@ -42,6 +48,12 @@ a {
 a:hover {
     color: #121b82;              /* Text color on hover */
     text-decoration: underline; /* Underline on hover */
+}
+
+nav {
+    display: flex;
+    gap: 1rem; /* Space between links */
+    padding-right: 1rem; /* Adds space to the right edge */
 }
 
 /* Navigation links */
@@ -75,17 +87,22 @@ nav a:hover, .logo:hover {
     font-size: 1.5rem; /* Larger size for visibility */
     color: white; /* Match header text color */
     cursor: pointer;
+    position: absolute; /* Ensure it stays inside the header */
+    right: 3rem; /* Adjust distance from the right edge */
+    top: 1rem; /* Adjust distance from the top edge */
+    z-index: 1100; /* Higher than other elements */
 }
 
 /* Main content styling */
 main {
     padding: 2rem;
     margin-top: 4rem; /* Adjust to prevent overlap with the fixed header */
+    max-width: 1024px;
 }
 
 h1 {
     color: #8087d3;
-    margin-left: 4rem;
+    margin-left: 2rem;
 }
 
 h2 {
@@ -95,44 +112,82 @@ h2 {
 
 /* General layout for the main content */
 .content {
-    display: flex; /* Enables side-by-side layout */
-    justify-content: space-between; /* Text on the left, image on the right */
-    align-items: center; /* Vertically center text and image */
-    padding: 2rem;
-    margin-left: 2rem;
-    margin-right: 3rem;
+    display: flex; /* Side-by-side layout for large screens */
+    justify-content: space-between; /* Space out text and image */
+    align-items: center; /* Align items to the top */
+    gap: 3rem; /* Space between text and image */
+    padding: 0 2rem;
+    margin-top: 0;
+    max-width: 1024px; /* Limit the container width */
+    height: 100vh;
 }
 
-/* Grouping text and contact on the left */
-.text-and-contact {
-    display: flex;
-    flex-direction: column; /* Stack text and contact vertically */
-    flex: 1; /* Occupy available space on the left */
-    margin-right: 2rem; /* Space between the text and the image */
+
+.content .text {
+    flex: 1;
 }
 
-/* Image styling */
+.content .image {
+    flex: 1; /* Allow the image container to share proportional space */
+    display: flex; /* Enable flexbox for alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center-align content */
+    width: 100%; /* Ensure the container occupies full width */
+}
+
+
+
 .content .image img {
-    max-width: 22rem; /* Adjust image width */
+    max-width: 100%; /* Let the image scale to fit the container */
     height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Optional: Rounded corners */
-    margin-top: 6rem;
+    margin: 10rem; /* Center horizontally */
+    display: block; /* Ensure it acts as a block element */
+    border-radius: 8px;
 }
+
+
+
+
+
+.text-box {
+    margin-top: 0;
+    flex: 2; /* Take more space for text and contact */
+}
+
+.text-box .text {
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+
+
 
 .goodmargins {
-    margin-left: 6rem; /* Adjust the value as needed */
-    margin-right: 3rem;
+    margin-left: 0.06rem; /* Adjust the value as needed */
+    margin-right: 1rem;
 }
 
 /* Contact information styling */
 .contact {
-    width: 30rem; /* Set a fixed width to make it smaller */
-    margin: 2rem auto 1rem 50%; /* Move it to the right */
-    transform: translateX(-72%); /* Center alignment with offset from the left */
+    /*width: 36rem; /* Set a fixed width to make it smaller */
+    margin: 2rem auto; /* Move it to the right */
     padding: 0.5rem 1rem; /* Smaller padding inside the box */
     background-color: #e6e6fa; /* Soft lavender background */
     border-radius: 8px; /* Rounded corners */
+    width: 90%; /* Set a percentage width to adapt to screen size */
+    max-width: 29rem; /* Prevent it from becoming too wide on large screens */
+    text-align: left;
 }
+
+@media screen and (max-width: 768px) {
+    .contact {
+        width: 95%; /* Make it fit almost the entire screen on small devices */
+        margin: 1rem auto;
+    }
+}
+
 
 /* Adjust text inside the box */
 .contact h3 {
@@ -166,7 +221,7 @@ h2 {
 }
 
 .research-talks {
-    font-family: 'American Typewriter', 'Charter', monospace;
+    font-family: 'American Typewriter', 'Courier', monospace;
     margin-bottom: 2rem;
 }
 
@@ -226,78 +281,64 @@ h2 {
 
 @media screen and (max-width: 768px) {
     nav {
-        display: none; /* Hide the navigation links */
-    }
-    header {
-        flex-direction: column; /* Stack the logo and menu */
-    }
-}
-
-@media screen and (max-width: 768px) {
-    header {
-        display: flex;
-        flex-direction: column;
-        padding: 0.5rem;
+        display: none; /* Ocultar menú por defecto */
+        flex-direction: column; /* Apilar los enlaces verticalmente */
+        position: absolute;
+        top: 100%; /* Justo debajo del header */
+        left: 0;
+        background-color: #8087d3; /* Mismo color que el header */
+        width: 100%; /* Cubre todo el ancho */
+        padding: 1rem;
     }
 
     nav a {
-        display: block;
-        margin: 0.5rem 0; /* Stack links vertically */
-    }
-}
-
-@media screen and (max-width: 768px) {
-    header nav {
-        display: none; /* Hide nav links by default */
-        flex-direction: column; /* Stack links vertically */
-        background-color: #8087d3; /* Match header background */
-        position: absolute; /* Overlay menu */
-        top: 4rem; /* Position below header */
-        right: 0;
-        left: 0;
-        padding: 1rem;
-        z-index: 1000;
-    }
-
-    header nav a {
-        padding: 0.5rem 0; /* Add spacing for links */
-        text-align: center; /* Center align text */
+        padding: 0.5rem 0; /* Espaciado entre los enlaces */
+        text-align: center;
     }
 
     .menu-toggle {
-        display: block; /* Show hamburger menu */
+        display: block; /* Mostrar el botón de hamburguesa */
     }
-}
-
-/* Optional transition effect for menu */
-header nav {
-    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 @media screen and (max-width: 768px) {
+    body {
+        padding: 1rem; /* Reduce padding on smaller screens */
+    }
+
     .content {
-        flex-direction: column; /* Stack the elements */
-        align-items: center; /* Center them */
+        flex-direction: column; /* Stack elements vertically */
+        margin-left: 0.5rem; /* Reduce margins */
+        margin-right: 1rem;
+        gap: 1rem; /* Reduce spacing */
+        align-items: center;
+        text-align: left;
     }
-    .text-and-contact, .contact, .image {
-        width: 100%; /* Occupy full width */
+
+    .content .image {
+        flex: none;
     }
-    .text-and-contact {
-        margin-right: 0; /* Remove extra margin */
-    }
+
     .image img {
-        max-width: 90%; /* Scale image */
+        max-width: 90%; /* Slightly smaller on narrow screens */
+        margin: 0 auto; /* Ensure horizontal centering */
+    }
+
+    .image {
+        flex: none; /* Ensure the image doesn’t shrink */
+        text-align: center; /* Center-align for small screens */
+    }
+    }
+
+    /* p {
+        line-height: 1.6;  Improve readability for small screens 
+        font-size: 1rem;  Slightly smaller text  } */ 
+
+
+@media screen and (max-width: 768px) {
+    .goodmargins {
+        margin-left: 0.04rem; /* Reduce margins on smaller screens */
+        margin-right: 1rem; /* Reduce margins on smaller screens */
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
