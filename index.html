@@ -19,18 +19,21 @@
     </header>
     <main>
         <div class="content">
-            <div class="text-and-contact">
+            <div class="text-box">
                 <div class="text">
                     <h1>Irene Ayuso Ventura</h1>
-                        <p>Since November 2024, I am a Postdoctoral Researcher Associate (PDRA) at
-                             <a href="https://www.durham.ac.uk">Durham University</a> in the 
-                             <a href="https://www.maths.dur.ac.uk/PiNE/prob_at_dur.html">Probability and Statistics group</a>, 
-                             under the supervision of <a href="https://sites.google.com/view/ellenpowell/home?authuser=0">Ellen Powell</a>.
-                        </p>
-                        <p>Prior to this, I completed my PhD at the <a href="https://lama-umr8050.fr">Laboratoire d'Analyse et Mathématiques Appliquées</a>, under the supervision of 
-                            <a href="https://www.math.univ-paris13.fr/~quentin.berger/index.html">Quentin Berger</a> and <a href="https://perso.math.u-pem.fr/leny.arnaud/">Arnaud Le Ny</a>.
-                        </p>
-                        <p>My domain of research is Probability, and more precisely, statistical mechanics and random graphs.</p>
+                    <p>Since November 2024, I am a Postdoctoral Research Associate (PDRA)
+                        at <a href="https://www.durham.ac.uk">Durham University</a> in the 
+                        <a href="https://www.maths.dur.ac.uk/PiNE/prob_at_dur.html">Probability and Statistics group</a>, 
+                        under the supervision of <a href="https://sites.google.com/view/ellenpowell/home?authuser=0">Ellen Powell</a>.
+                    </p>
+                    <p>Prior to this, I completed my PhD at the 
+                        <a href="https://lama-umr8050.fr">Laboratoire d'Analyse et Mathématiques Appliquées</a>, 
+                        under the supervision of 
+                        <a href="https://www.math.univ-paris13.fr/~quentin.berger/index.html">Quentin Berger</a> and 
+                        <a href="https://perso.math.u-pem.fr/leny.arnaud/">Arnaud Le Ny</a>.
+                    </p>
+                    <p>My domain of research is Probability, focusing on statistical mechanics and random graphs.</p>
                 </div>
                 <div class="contact">
                     <h3>Contact:</h3>
@@ -46,14 +49,8 @@
     <script>
         document.querySelector('.menu-toggle').addEventListener('click', () => {
             const nav = document.querySelector('header nav');
-            if (nav.style.display === 'flex') {
-                nav.style.display = 'none'; // Hide navigation
-            } else {
-                nav.style.display = 'flex'; // Show navigation
-                nav.style.flexDirection = 'column'; // Stack links vertically
-            }
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
         });
     </script>
 </body>
 </html>
-
