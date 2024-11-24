@@ -220,6 +220,27 @@ h2 {
     color: #000000; /* Triangle color */
 }
 
+@media screen and (max-width: 768px) {
+    .publications {
+        padding: 1rem; /* Reduce padding on small screens */
+        margin: 0 1rem; /* Reduce left and right margins */
+        text-align: justify; /* Justify text for better readability */
+    }
+
+    /* Ensure headings are centered on small screens */
+    .publications h3 {
+        text-align: center;
+        margin-bottom: 1rem; /* Add spacing below headings */
+    }
+
+    /* Adjust list items and paragraphs */
+    .publications p,
+    .publications li {
+        text-align: left; /* Left-align content */
+        margin-bottom: 1rem; /* Add spacing between items */
+    }
+}
+
 .research-talks {
     font-family: 'American Typewriter', 'Charter', monospace;
     margin-bottom: 2rem;
@@ -248,6 +269,22 @@ h2 {
     line-height: 1.6; /* Improve readability */
 }
 
+@media screen and (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 1rem; /* Slightly larger gap for readability */
+    }
+
+    .month {
+        text-align: left; /* Align months to the left */
+        font-weight: bold; /* Make months visually distinct */
+    }
+
+    .talk {
+        margin-bottom: 1rem; /* Add spacing between entries */
+    }
+}
+
 .posters {
     display: flex; /* Arrange images side-by-side */
     gap: 1rem; /* Space between images */
@@ -261,6 +298,19 @@ h2 {
     /* border-radius: 8px; /* Optional: Add rounded corners */
     /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for style */
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .posters {
+        flex-direction: column; /* Stack images vertically */
+        gap: 1.5rem; /* Add more space between images */
+        align-items: center; /* Center-align images */
+    }
+
+    .posters img {
+        max-width: 90%; /* Reduce size to fit within the screen */
+        margin: 0 auto; /* Center each image */
+    }
 }
 
 /* Styling for clickable images */
