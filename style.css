@@ -313,6 +313,18 @@ h2 {
     }
 }
 
+@media screen and (max-width: 1024px) {
+    .posters {
+        flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+        gap: 1.5rem; /* Slightly larger spacing for readability */
+    }
+
+    .posters img {
+        max-width: 10rem; /* Reduce image size slightly */
+        margin: 0 auto; /* Center images */
+    }
+}
+
 /* Styling for clickable images */
 .clickable a {
     text-decoration: none; /* Remove any link underline */
