@@ -64,7 +64,7 @@ nav a {
 }
 
 nav a:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color: white;
 }
 
@@ -75,7 +75,7 @@ nav a, .logo {
 }
 
 nav a:hover, .logo:hover {
-    text-decoration: underline; /* Add underline on hover */
+    text-decoration: none; /* Add underline on hover */
     color: #d3d3ff; /* Optional: Hover color */
 }
 
