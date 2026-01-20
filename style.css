@@ -209,6 +209,7 @@ h2 {
     position: relative; /* Allows the triangle to be positioned */
     padding-left: 2rem; /* Add space to make room for the triangle */
     text-indent: 0; /* Prevent text from being pushed too far */
+    margin-bottom: 1em;
 }
 
 .list-pub li::before {
